@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "DrawFive";
+}
+
+<h2>DrawFive</h2>
+
+<p>Deck ID: @ViewBag.deckID</p>
+
+@if (ViewBag.DrawData != null)
+{
+    <table>
+
+        @for (int i = 0; i < ViewBag.DrawData["cards"].Count; i++)
+        {
+            <tr>
+                <img src="@ViewBag.DrawData["cards"][i]["image"]" />
+            </tr>
+        }
+    </table>
+
+    <a href="~/CardAPI/FiveMore" class="btn">5 more</a>
+}
